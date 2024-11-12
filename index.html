@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore India’s Hidden Gems</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-0hYeQ8oStfC2Y8DdpMNvOGBeSVvngGQ/O3rmzzPE+rYoREtt5EXvSA9g7ol2LFlXDNt0MyXpW6J60MuON0R/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <h1>Discover Beautiful Places in India</h1>
+    <p>Filter and explore unique destinations, from quiet beaches to bustling cities.</p>
+  </header>
+
+  <div class="container">
+    <div class="filter-container">
+      <label for="categoryFilter">Hover On the Place to View Details ,  Filter by Category:</label>
+      <select id="categoryFilter">
+        <option value="all">All</option>
+      </select>
+    </div>
+    <div id="placesContainer" class="places-grid"></div>
+  </div>
+  
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
