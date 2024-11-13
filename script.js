@@ -12,15 +12,12 @@ function populateCategories() {
 }
 
 function renderPlaces(filteredPlaces) {
-  placesContainer.innerHTML = ""; 
+  placesContainer.innerHTML = "";
   filteredPlaces.forEach(place => {
     const tile = document.createElement("div");
     tile.classList.add("place-tile");
 
-
     tile.style.backgroundImage = `url(${place.image})`;
-
-
     tile.innerHTML = `
       <div class="place-name">${place.name}</div>
       <div class="hover-overlay">
@@ -43,9 +40,5 @@ function filterPlaces() {
     : places.filter(place => place.category.name === selectedCategory);
   renderPlaces(filteredPlaces);
 }
-
-populateCategories();
-renderPlaces(places);
-
 
 categoryFilter.addEventListener("change", filterPlaces);
