@@ -1,140 +1,138 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #040404, #373744);
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  header {
-    padding: 40px;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  
-  header p {
-    color: #b0b0b0;
-    font-size: 1rem;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  .container {
-    max-width: 1200px;
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-  }
-  
-  .filter-container {
-    margin-bottom: 20px;
-  }
-  
-  #categoryFilter {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #2a2d35;
-    color: #e0e0e0;
-    border: 1px solid #444;
-    border-radius: 5px;
-  }
-  
-  .places-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
-  }
-  
-  
-  .place-tile {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .place-tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
-  }
-  
+body {
+  background: linear-gradient(135deg, #040404, #373744);
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+}
 
-  .place-tile .place-name {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    font-size: 1.2rem;
-    text-align: center;
-    font-weight: 600;
-  }
-  
-  .place-tile .hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  
-  .place-tile:hover .hover-overlay {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .hover-overlay h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .hover-overlay p {
-    font-size: 0.9rem;
-    margin: 10px 0;
-    text-align: center;
-    padding: 0 15px;
-    color: #c0c0c0;
-  }
-  
-  .hover-overlay .view-map {
-    background: #00aaff;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    margin-top: 15px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  
-  .hover-overlay .view-map:hover {
-    background: #0077cc;
-  }
-  
+header {
+  padding: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #b0b0b0;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+#categoryFilter {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #2a2d35;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 5px;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.place-tile {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.place-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+.place-tile .place-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.place-tile .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); 
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  padding: 15px; 
+}
+
+.place-tile:hover .hover-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hover-overlay h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hover-overlay p {
+  font-size: 1rem; 
+  margin: 8px 0;
+  text-align: center;
+  color: #c0c0c0;
+  line-height: 1.5;
+}
+
+.hover-overlay .view-map {
+  background: #00aaff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.hover-overlay .view-map:hover {
+  background: #0077cc;
+}

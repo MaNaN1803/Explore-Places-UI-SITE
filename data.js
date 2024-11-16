@@ -30,28 +30,25 @@ const categoryImages = {
 
 let places = [];
 
-async function loadPlaces() {
+async function loadPlacesData() {
   try {
-    const response = await fetch('places.json');
+    const response = await fetch('myData.json');
     if (!response.ok) throw new Error('Failed to load JSON data');
-    
+
     const jsonData = await response.json();
 
     places = jsonData.map(entry => ({
-      name: entry.name,
-      description: entry.description,
+      name: entry.Name,
+      description: entry.Description,
+      state: entry.Location.split(', ')[2], 
+      category: entry.Category,
       location: {
-        latitude: entry.location.latitude,
-        longitude: entry.location.longitude
+        latitude: entry.Latitude,
+        longitude: entry.Longitude
       },
-      category: {
-        name: entry.category.name
-      },
-  
-      image: categoryImages[entry.category.name] || "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image: categoryImages[entry.Category] || "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }));
 
-  
     populateCategories();
     renderPlaces(places);
   } catch (error) {
@@ -59,4 +56,4 @@ async function loadPlaces() {
   }
 }
 
-loadPlaces();
+loadPlacesData();
